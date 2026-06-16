@@ -13,10 +13,8 @@ public class App
     public static void main(String[] args)
     {
         WebDriver driver = new ChromeDriver();
-        ChromeOptions options = new ChromeOptions();
-options.addArguments("--headless");
-WebDriver driver = new ChromeDriver(options);
-
+        
+        
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
 
@@ -30,3 +28,6 @@ WebDriver driver = new ChromeDriver(options);
               .click();
     }
 }
+
+
+
