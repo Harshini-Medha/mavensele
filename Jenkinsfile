@@ -2,7 +2,6 @@ pipeline {
 agent any
 tools {
 maven 'Maven'
-jdk 'JDK'
 }
 stages {
 stage('Checkout') {
@@ -23,7 +22,7 @@ sh 'mvn test'
 stage('Run Application') {
     steps {
         
-        sh 'mvn exec:java -Dexec.mainClass="com.example.app"'
+        sh 'mvn exec:java -Dexec.mainClass="com.example.App"'
     }
 }
 }
