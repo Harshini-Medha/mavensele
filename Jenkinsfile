@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'   // Ensure this matches the Maven tool name configured in Jenkins
+        maven 'Maven'
     }
 
     stages {
@@ -26,12 +26,18 @@ pipeline {
             }
         }
 
-        stage('Run Application') { steps { sh 'mvn exec:java -Dexec.mainClass="com.example.App"' } } 
+        stage('Run Application') {
+            steps {
+                sh 'mvn exec:java -Dexec.mainClass="com.example.App"'
+            }
+        }
+    }
 
     post {
         success {
             echo 'Build and deployment successful!'
         }
+
         failure {
             echo 'Build failed!'
         }
