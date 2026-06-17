@@ -13,8 +13,8 @@ public class App
     public static void main(String[] args)
     {
         WebDriver driver = new ChromeDriver();
-        
-        
+        ChromeOptions options = new ChromeOptions(); options.addArguments("--headless=new"); options.addArguments("--no-sandbox"); options.addArguments("--disable-dev-shm-usage"); options.addArguments("--disable-gpu"); options.addArguments("--remote-allow-origins=*");
+        WebDriverManager.chromedriver().setup(); 
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
 
