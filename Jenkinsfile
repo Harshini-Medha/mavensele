@@ -22,8 +22,8 @@ sh 'mvn test'
 }
 stage('Run Application') {
     steps {
-        sh 'mvn clean compile'
-        sh "mvn exec:java -Dexec.mainClass=com.example.app"
+        
+        sh 'mvn exec:java -Dexec.mainClass="com.example.app"'
     }
 }
 }
